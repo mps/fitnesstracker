@@ -1,6 +1,8 @@
 Fitnesstracker::Application.routes.draw do
   resources :exercises
 
+  root :to => redirect("/exercises")
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
