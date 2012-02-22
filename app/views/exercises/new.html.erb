@@ -1,5 +1,3 @@
-<h1>New exercise</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', exercises_path %>
+<%= form_for @exercise, :url => exercises_path, :html => { :class => :form } do |f| -%>
+  <%= render :partial => "form", :locals => {:f => f} %>
+<% end -%>

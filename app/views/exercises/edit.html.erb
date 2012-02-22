@@ -1,6 +1,4 @@
-<h1>Editing exercise</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @exercise %> |
-<%= link_to 'Back', exercises_path %>
+<%= form_for @exercise, :url => exercise_path(@exercise), :html => { :class => "edit_exercise", :id => "edit_exercise" } do |f| -%>
+  <input name="_method" type="hidden" value="put" />
+  <%= render :partial => "form", :locals => {:f => f} %>
+<% end -%>

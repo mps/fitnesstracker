@@ -1,20 +1,15 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <b>Person:</b>
-  <%= @exercise.person %>
-</p>
+<label class="label"><%= t("activerecord.attributes.exercise.person", :default => t("activerecord.labels.person", :default => "Person")) %>:</label>
+<p><%= @exercise.person %></p>
 
-<p>
-  <b>Minutes:</b>
-  <%= @exercise.minutes %>
-</p>
+<label class="label"><%= t("activerecord.attributes.exercise.minutes", :default => t("activerecord.labels.minutes", :default => "Minutes")) %>:</label>
+<p><%= @exercise.minutes %></p>
 
-<p>
-  <b>Exercise date:</b>
-  <%= @exercise.exercise_date %>
-</p>
+<label class="label"><%= t("activerecord.attributes.exercise.exercise_date", :default => t("activerecord.labels.exercise_date", :default => "Exercise date")) %>:</label>
+<p><%= @exercise.exercise_date %></p>
 
-
-<%= link_to 'Edit', edit_exercise_path(@exercise) %> |
-<%= link_to 'Back', exercises_path %>
+<div class="form-actions">
+<%= link_to "Back", exercises_path, :class => 'btn'  %>
+<%= link_to "Edit", edit_exercise_path(@exercise), :class => 'btn' %>
+<%= link_to "Delete", exercise_path(@exercise), :method => "delete", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}", :class => 'btn' %>
+</div>

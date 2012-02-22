@@ -1,29 +1,25 @@
-<%= form_for(@exercise) do |f| %>
-  <% if @exercise.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@exercise.errors.count, "error") %> prohibited this exercise from being saved:</h2>
 
-      <ul>
-      <% @exercise.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<div class="clearfix">
+   <%= f.label :person, t("activerecord.attributes.exercise.person", :default => "Person"), :class => :label %>
+  <div class="input">
+    <%= f.text_field :person, :class => 'text_field' %>
+  </div>
+</div>
 
-  <div class="field">
-    <%= f.label :person %><br />
-    <%= f.text_field :person %>
+<div class="clearfix">
+   <%= f.label :minutes, t("activerecord.attributes.exercise.minutes", :default => "Minutes"), :class => :label %>
+  <div class="input">
+    <%= f.number_field :minutes, :class => 'number_field' %>
   </div>
-  <div class="field">
-    <%= f.label :minutes %><br />
-    <%= f.number_field :minutes %>
+</div>
+
+<div class="clearfix">
+   <%= f.label :exercise_date, t("activerecord.attributes.exercise.exercise_date", :default => "Exercise date"), :class => :label %>
+  <div class="input">
+    <%= f.datetime_select :exercise_date, :class => 'datetime_select' %>
   </div>
-  <div class="field">
-    <%= f.label :exercise_date %><br />
-    <%= f.datetime_select :exercise_date %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>
+<div class="form-actions">
+  <button class="btn primary" type="submit">Save</button> or
+	<%= link_to "Cancel", exercises_path %>
+</div>

@@ -1,29 +1,35 @@
-<h1> <%= @total_count %> Exercises so far... </h1>
 
-<h3> <%= @total_minutes %> total minutes </h3>
+  <h1> <%= @total_count %> Exercises so far...</h1>
 
-<table>
+<p>
+
+<h3> <%= @total_minutes %> total minutes</h3>
+</p>
+
+<%= link_to "New Exercise", new_exercise_path, :class => 'btn btn-success btn-large' %>
+
+<table class="table table-striped">
+ <thead>
   <tr>
-    <th>Person</th>
-    <th>Minutes</th>
-    <th>Exercise date</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>
+      <%= t("activerecord.attributes.exercise.person", :default => t("activerecord.labels.person", :default => "Person")) %>
+    </th>
+        <th>Created at</th>
+    <th>Actions</th>
   </tr>
-
-<% @exercises.each do |exercise| %>
-  <tr>
-    <td><%= exercise.person %></td>
-    <td><%= exercise.minutes %></td>
-    <td><%= exercise.exercise_date %></td>
-    <td><%= link_to 'Show', exercise %></td>
-    <td><%= link_to 'Edit', edit_exercise_path(exercise) %></td>
-    <td><%= link_to 'Destroy', exercise, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
+  </thead>
+  <tbody>
+  <% @exercises.each do |exercise| -%>
+   <tr>
+    <td><%= link_to exercise.person, exercise_path(exercise) %>
+    </td>
+        <td><%= exercise.created_at %></td>
+    <td>
+      <%= link_to "Show", exercise_path(exercise) %>
+      <%= link_to "Edit", edit_exercise_path(exercise) %>
+      <%= link_to "Destroy", exercise_path(exercise), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
+    </td>
+    </tr>
+    <% end -%>
+   </tbody>
 </table>
-
-<br />
-
-<%= link_to 'New Exercise', new_exercise_path %>
