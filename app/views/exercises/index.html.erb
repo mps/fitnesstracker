@@ -1,0 +1,29 @@
+<h1> <%= @total_count %> Exercises so far... </h1>
+
+<h3> <%= @total_minutes %> total minutes </h3>
+
+<table>
+  <tr>
+    <th>Person</th>
+    <th>Minutes</th>
+    <th>Exercise date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @exercises.each do |exercise| %>
+  <tr>
+    <td><%= exercise.person %></td>
+    <td><%= exercise.minutes %></td>
+    <td><%= exercise.exercise_date %></td>
+    <td><%= link_to 'Show', exercise %></td>
+    <td><%= link_to 'Edit', edit_exercise_path(exercise) %></td>
+    <td><%= link_to 'Destroy', exercise, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Exercise', new_exercise_path %>
