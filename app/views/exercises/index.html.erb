@@ -6,7 +6,7 @@
 <h3> <%= @total_minutes %> total minutes</h3>
 </p>
 
-<%= link_to "New Exercise", new_exercise_path, :class => 'btn btn-success btn-large' %>
+<%= link_to '<i class="icon-calendar icon-white"></i> New Exercise'.html_safe, new_exercise_path, :class => 'btn btn-success btn-large' %>
 
 <table class="table table-striped">
  <thead>
@@ -27,9 +27,9 @@
         <td><%= exercise.exercise_date %></td>
         <td><%= exercise.minutes %></td>
     <td>
-      <%= link_to "Show", exercise_path(exercise) %>
-      <%= link_to "Edit", edit_exercise_path(exercise) %>
-      <%= link_to "Destroy", exercise_path(exercise), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
+      <%= link_to '<i class="icon-search"></i> Show'.html_safe, exercise_path(exercise), :class => 'btn btn-small' %>
+      <%= link_to '<i class="icon-edit"></i> Edit'.html_safe, edit_exercise_path(exercise), :class => 'btn btn-small' %>
+      <%= link_to '<i class="icon-trash"></i> Delete'.html_safe, exercise_path(exercise), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}", :class => 'btn btn-small' %>
     </td>
     </tr>
     <% end -%>
