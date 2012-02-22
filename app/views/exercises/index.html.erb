@@ -14,7 +14,8 @@
     <th>
       <%= t("activerecord.attributes.exercise.person", :default => t("activerecord.labels.person", :default => "Person")) %>
     </th>
-        <th>Created at</th>
+        <th>Exercise Date</th>
+        <th>Minutes</th>
     <th>Actions</th>
   </tr>
   </thead>
@@ -23,7 +24,8 @@
    <tr>
     <td><%= link_to exercise.person, exercise_path(exercise) %>
     </td>
-        <td><%= exercise.created_at %></td>
+        <td><%= exercise.exercise_date %></td>
+        <td><%= exercise.minutes %></td>
     <td>
       <%= link_to "Show", exercise_path(exercise) %>
       <%= link_to "Edit", edit_exercise_path(exercise) %>
