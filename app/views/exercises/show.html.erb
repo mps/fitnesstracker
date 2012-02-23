@@ -9,7 +9,7 @@
 <p><%= @exercise.exercise_date %></p>
 
 <div class="form-actions">
-<%= link_to "Back", exercises_path, :class => 'btn'  %>
-<%= link_to "Edit", edit_exercise_path(@exercise), :class => 'btn' %>
-<%= link_to "Delete", exercise_path(@exercise), :method => "delete", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}", :class => 'btn' %>
+<%= link_to '<i class="icon-home"></i> Back'.html_safe, exercises_path, :class => 'btn btn-small' %>
+<%= link_to '<i class="icon-edit"></i> Edit'.html_safe, edit_exercise_path(@exercise), :class => 'btn btn-small' %>
+<%= link_to '<i class="icon-trash"></i> Delete'.html_safe, exercise_path(@exercise), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}", :class => 'btn btn-small' %>
 </div>
