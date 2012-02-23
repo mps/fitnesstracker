@@ -2,7 +2,7 @@ require 'test_helper'
 
 class ExercisesControllerTest < ActionController::TestCase
   setup do
-    @exercise = exercises(:one)
+    @exercise = exercises(:matthew)
   end
 
   test "should get index" do

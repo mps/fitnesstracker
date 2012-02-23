@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  person: MyString
-  minutes: 1
+matthew:
+  person: Matthew
+  minutes: 50
   exercise_date: 2012-02-22 14:23:23
 
-two:
-  person: MyString
-  minutes: 1
+rob:
+  person: Rob
+  minutes: 20
   exercise_date: 2012-02-22 14:23:23
