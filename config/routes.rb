@@ -1,6 +1,9 @@
 Fitnesstracker::Application.routes.draw do
   resources :exercises
 
+  match 'reports/weeklyreport' => 'reports#weekly_report'
+  match 'reports/process_report' => 'reports#process_report'
+
   root :to => redirect("/exercises")
 
   # The priority is based upon order of creation:

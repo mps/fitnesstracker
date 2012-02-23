@@ -1,10 +1,8 @@
-<h1> <%= @total_count %> Exercises so far...</h1>
+<h1> <%= @total_count %> Exercises between <%= @start %> and <%= @end %></h1>
 
 <p>
   <h3> <%= @total_minutes %> total minutes</h3>
 </p>
-
-<%= link_to '<i class="icon-calendar icon-white"></i> New Exercise'.html_safe, new_exercise_path, :class => 'btn btn-success btn-large' %>
 
 <table class="table table-striped">
  <thead>
