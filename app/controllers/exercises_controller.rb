@@ -2,7 +2,7 @@ class ExercisesController < ApplicationController
   # GET /exercises
   # GET /exercises.json
   def index
-    @exercises = Exercise.all
+    @exercises = Exercise.find(:all, :order => 'exercise_date DESC')
     @total_count = @exercises.count
 
     @total_minutes = 0
