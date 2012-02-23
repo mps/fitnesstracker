@@ -2,14 +2,14 @@
 <div class="clearfix">
    <%= f.label :person, t("activerecord.attributes.exercise.person", :default => "Person"), :class => :label %>
   <div class="input">
-    <%= f.text_field :person, :class => 'text_field' %>
+    <%= f.select :person, [['Kevin', 'Kevin'], ['Joel', 'Joel'], ['Josh', 'Josh'], ['Manjeet', 'Manjeet'], ['Martavis', 'Martavis'], ['Matthew', 'Matthew'], ['Simmons', 'Simmons'], ['Sosebee', 'Sosebee']] %>
   </div>
 </div>
 
 <div class="clearfix">
    <%= f.label :minutes, t("activerecord.attributes.exercise.minutes", :default => "Minutes"), :class => :label %>
   <div class="input">
-    <%= f.number_field :minutes, :class => 'number_field' %>
+    <%= f.text_field :minutes, :class => 'text_field' %>
   </div>
 </div>
 
