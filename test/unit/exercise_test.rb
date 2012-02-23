@@ -12,6 +12,12 @@ class ExerciseTest < ActiveSupport::TestCase
     e.exercise_date = nil
     assert !e.valid?, 'A new exercise requires an exercise_date.'
   end
+  
+  test "invalid without minutes" do
+    e = exercises(:matthew)
+    e.minutes = nil
+    assert !e.valid?, 'A new exercise requires minutes.'
+  end
 
   test "valid with all attributes" do 
     e = exercises(:matthew)

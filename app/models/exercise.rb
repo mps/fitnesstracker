@@ -1,3 +1,3 @@
 class Exercise < ActiveRecord::Base
-  validates :person, :exercise_date, presence: true
+  validates :person, :exercise_date, :minutes, presence: true
 end
