@@ -3,6 +3,8 @@ Fitnesstracker::Application.routes.draw do
 
   match 'reports/weeklyreport' => 'reports#weekly_report'
   match 'reports/process_report' => 'reports#process_report'
+  match 'reports/personreport' => 'reports#person_report'
+  match 'reports/process_person_report' => 'reports#process_person_report'
 
   root :to => redirect("/exercises")
 
