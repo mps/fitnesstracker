@@ -25,9 +25,9 @@
         <td><%= exercise.exercise_date.to_date.to_s(:long) %></td>
         <td><%= exercise.minutes %></td>
     <td>
-      <%= link_to '<i class="icon-search"></i> Show'.html_safe, exercise_path(exercise), :class => 'btn btn-small' %>
-      <%= link_to '<i class="icon-edit"></i> Edit'.html_safe, edit_exercise_path(exercise), :class => 'btn btn-small' %>
-      <%= link_to '<i class="icon-trash"></i> Delete'.html_safe, exercise_path(exercise), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}", :class => 'btn btn-small' %>
+      <%= link_to '<i class="icon-search"></i>'.html_safe, exercise_path(exercise), :class => 'btn btn-small' %>
+      <%= link_to '<i class="icon-edit"></i>'.html_safe, edit_exercise_path(exercise), :class => 'btn btn-small' %>
+      <%= link_to '<i class="icon-trash"></i>'.html_safe, exercise_path(exercise), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}", :class => 'btn btn-small' %>
     </td>
     </tr>
     <% end -%>
