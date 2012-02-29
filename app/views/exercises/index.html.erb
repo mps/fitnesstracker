@@ -22,7 +22,7 @@
    <tr>
     <td><%= link_to exercise.person, exercise_path(exercise) %>
     </td>
-        <td><%= exercise.exercise_date %></td>
+        <td><%= exercise.exercise_date.to_date.to_s(:long) %></td>
         <td><%= exercise.minutes %></td>
     <td>
       <%= link_to '<i class="icon-search"></i> Show'.html_safe, exercise_path(exercise), :class => 'btn btn-small' %>
