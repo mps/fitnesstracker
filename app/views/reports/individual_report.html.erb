@@ -1,0 +1,20 @@
+<h1>The individual battle</h1>
+
+<table class="table table-striped">
+ <thead>
+  <tr>
+    <th>Person</th>
+    <th>Total Minutes</th>
+    <th>Percentage</th>
+  </tr>
+  </thead>
+  <tbody>
+    <% @exercises.keys.sort.each do |person| %>  
+   <tr>
+    <td><%= person %></td>
+    <td><%= @exercises[person].sum { |e| e.minutes } %></td>
+    <td><%= number_to_percentage (@exercises[person].sum { |e| e.minutes } / @total_minutes * 100) %></td>
+   </tr>
+  <% end %>
+   </tbody>
+</table>

@@ -1,6 +1,7 @@
 Fitnesstracker::Application.routes.draw do
   resources :exercises
 
+  match 'reports/individualreport' => 'reports#individual_report'
   match 'reports/weeklyreport' => 'reports#weekly_report'
   match 'reports/process_report' => 'reports#process_report'
   match 'reports/personreport' => 'reports#person_report'

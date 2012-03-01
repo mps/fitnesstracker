@@ -54,4 +54,14 @@ class ReportsController < ApplicationController
       format.csv { send_data(@exercises.to_csv) }
     end
   end
+
+  def individual_report
+    @exercises = Exercise.all.group_by { |e| e.person }
+    @total_minutes = 0.0
+
+    Exercise.all.each do |exercise|
+      @total_minutes = @total_minutes + exercise.minutes
+    end
+
+  end
 end
