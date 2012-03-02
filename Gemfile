@@ -10,7 +10,7 @@ end
 
 group :test do
   gem 'shoulda'
-  gem 'mocha'
+  gem 'mocha', :require => false
 end
 
 # Gems used only for assets and not required
