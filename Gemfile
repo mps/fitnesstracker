@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.1'
-gem "twitter-bootstrap-rails", "~> 2.0.1.0"
+gem "twitter-bootstrap-rails"
 gem 'to_csv-rails'
 
 group :development do
