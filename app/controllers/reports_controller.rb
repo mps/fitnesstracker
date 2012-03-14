@@ -48,6 +48,14 @@ class ReportsController < ApplicationController
       return
     end
 
+    if params[:pdf] != nil
+      pdf = IndividualExercisePdf.new(@exercises)
+      send_data pdf.render, filename: "#{@person}.pdf",
+                            type: "application/pdf",
+                            disposition: "inline"
+      return
+    end
+
     respond_to do |format|
       format.html # process_report.html.erb
       format.json { render json: @exercises }
